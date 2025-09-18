@@ -83,7 +83,7 @@
 }
 
 
-@media (max-width:1024) {
+@media (max-width: 1024px) {
   .section{
     width: 95%;
   }
