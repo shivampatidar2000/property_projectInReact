@@ -1,10 +1,15 @@
 import styled from "./Footer.module.css";
+import logo from "../assets/images/logoImage.png"
+import facebook from "../assets/images/facebook.png"
+import twitter from "../assets/images/twitter.png"
+import youtube from "../assets/images/youtube.png"
+import linkedin from "../assets/images/linkedin.png"
 
 export default function Footer() {
   return (
     <footer className={styled.mainFooter}>
       <div className={styled.brand}>
-        <img src="src/assets/images/logoImage.png" alt="logo" />
+        <img src={logo} alt="logo" />
         <p className={styled.logoname}>
           DWELL <span>PROPERTIES</span>
         </p>
@@ -25,16 +30,16 @@ export default function Footer() {
           info@mysite.com <br />
             <ul className={styled.social}>
           <li className={styled.imgforsocial}>
-            <img src="src/assets/images/facebook.png" alt="facebook" />
+            <img src={facebook} alt="facebook" />
           </li>
           <li className={styled.imgforsocial}>
-            <img src="src/assets/images/twitter.png" alt="twitter" />
+            <img src={twitter} alt="twitter" />
           </li>
           <li className={styled.imgforsocial}>
-            <img src="src/assets/images/youtube.png" alt="youtube" />
+            <img src={youtube} alt="youtube" />
           </li>
           <li className={styled.imgforsocial}>
-            <img src="src/assets/images/linkedin.png" alt="linkedin" />
+            <img src={linkedin} alt="linkedin" />
           </li>
         </ul>
         </p>

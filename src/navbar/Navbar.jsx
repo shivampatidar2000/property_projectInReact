@@ -3,6 +3,11 @@
 import { useState } from "react";
 import styled from "./Navbar.module.css";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/images/logoImage.png"
+import facebook from "../assets/images/facebook.png"
+import twitter from "../assets/images/twitter.png"
+import youtube from "../assets/images/youtube.png"
+import linkedin from "../assets/images/linkedin.png"
 export default function AppNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -16,7 +21,7 @@ export default function AppNavbar() {
       <div className={styled.navbar}>
         {/* LEFT SIDE (Logo always visible) */}
         <div className={styled.leftSide}>
-          <img src="src/assets/images/logoImage.png" alt="logo" />
+          <img src={logo} alt="logo" />
           <a href="/">
             <span className={styled.logo}>DWELL</span>
             <span className={styled.logosub}>PROPERTIES</span>
@@ -42,10 +47,10 @@ export default function AppNavbar() {
           </ul>
 
           <div className={styled.desktopSocialLinks}>
-            <img src="src/assets/images/facebook.png" alt="facebook" />
-            <img src="src/assets/images/twitter.png" alt="twitter" />
-            <img src="src/assets/images/linkedin.png" alt="linkedin" />
-            <img src="src/assets/images/youtube.png" alt="youtube" />
+            <img src={facebook} alt="facebook" />
+            <img src={twitter} alt="twitter" />
+            <img src={linkedin} alt="linkedin" />
+            <img src={youtube} alt="youtube" />
           </div>
         </div>
 
@@ -83,10 +88,10 @@ export default function AppNavbar() {
 
         {/* Social Icons at Bottom for Mobile */}
         <div className={styled.socialLinks}>
-          <img src="src/assets/images/facebook.png" alt="facebook" />
-          <img src="src/assets/images/twitter.png" alt="twitter" />
-          <img src="src/assets/images/linkedin.png" alt="linkedin" />
-          <img src="src/assets/images/youtube.png" alt="youtube" />
+          <img src = {facebook} alt="facebook" />
+          <img src = {twitter} alt="twitter" />
+          <img src = {linkedin} alt="linkedin" />
+          <img src = {youtube} alt="youtube" />
         </div>
       </div>
     </div>
