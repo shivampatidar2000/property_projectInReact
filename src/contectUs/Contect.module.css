@@ -1,0 +1,138 @@
+.mainCont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    background-color: #1d2d42;
+    gap: 40px;
+}
+
+/* Left & Right Sections */
+.leftSection,
+.rightSection {
+    flex: 1 1 400px;
+    max-width: 600px;
+    margin-top: 35px;
+}
+
+.home {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: #e2e1e7;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.para {
+    letter-spacing: 0.02em;
+    line-height: 1.8em;
+    font-size: 16px;
+    color: #daf5ed;
+}
+
+/* Form Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.inputGroup>div {
+    flex: 1;
+    min-width: 150px;
+}
+
+.field {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff8e0;
+    font-size: 14px;
+}
+
+.inputField,
+.textArea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px 0;
+    outline: none;
+}
+
+.textArea {
+    border: 1px solid #ffffff;
+    min-height: 100px;
+    resize: vertical;
+    padding: 8px;
+}
+
+.radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #ffffff;
+}
+
+.submitBtn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.radioGroup div {
+    display: flex;
+    gap: 40px;
+    /* 👈 This adds space between Buy, Rent, Other */
+    flex-wrap: wrap;
+
+}
+
+.radioGroup label {
+    margin-left: -38px;
+    /* small space between input and its text */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mainCont {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .radioGroup label {
+        margin-left: -33px;
+        /* small space between input and its text */
+    }
+
+    .home {
+        text-align: center;
+    }
+
+    .inputGroup {
+        flex-direction: column;
+    }
+
+    .submitBtn {
+        align-self: center;
+    }
+
+    .leftSection {
+        max-height: 250px;
+    }
+}

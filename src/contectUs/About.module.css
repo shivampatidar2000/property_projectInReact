@@ -1,0 +1,71 @@
+.dream {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: #3e3c3cc2;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mainContainer{
+  margin-bottom: 60px;  
+}
+
+.threeDiv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 20px;
+}
+
+.threeDiv div {
+  flex: 1 1 250px; /* shrink/grow and minimum width */
+  max-width: 300px;
+}
+
+.threeDiv p:first-child {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .threeDiv {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .threeDiv {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .threeDiv div {
+    max-width: 90%;
+  }
+
+  .dream {
+    font-size: 1.3rem;
+    letter-spacing: 0.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dream {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .threeDiv p:first-child {
+    font-size: 1.1rem;
+  }
+}

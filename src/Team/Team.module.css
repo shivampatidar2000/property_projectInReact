@@ -1,0 +1,222 @@
+.saleContainer {
+  padding: 120px 20px 40px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
+}
+
+.card {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+  /* width:55% */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 431px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 15px;
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.uuid {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.address1 {
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.address1:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.address {
+  color: #473e3e;
+  font-size: 0.9rem;
+}
+
+.socialLink {
+  display: inline-block;
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+    left: 20.6rem;
+    bottom: 1.8rem;
+}
+
+.socialLink:hover {
+  text-decoration: underline;
+}
+
+/* ---------- HEADER ---------- */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: auto;
+  top: 77px;
+}
+
+.img {
+  width: 100%;
+  height: 26vh;
+  object-fit: cover;
+  /* display: block; */
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 27, 54, 0.7);
+  z-index: 1;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.properties {
+  color: #fff;
+  font-weight: 900;
+  font-size: 3rem;
+  margin: 0px;
+}
+
+.content {
+  letter-spacing: 0.3em;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+
+.gridName{
+    margin: 7px 0px 0px 15px;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 1024px) {
+  .imageWrapper img {
+    height: 296px;
+  }
+  .properties {
+    font-size: 2.5rem;
+  }
+    .socialLink{
+    left: 12.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .saleContainer {
+    padding: 110px 10px 30px;
+  }
+  .grid {
+    gap: 35px;
+  }
+  .imageWrapper img {
+    height: 355px;
+  }
+  .properties {
+    font-size: 2rem;
+  }
+  .content {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+      .socialLink{
+    left: 15.2rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .saleContainer {
+    padding: 110px 8px 20px;
+  }
+  .imageWrapper img {
+    height: 362px;
+  }
+  .properties {
+    font-size: 1.8rem;
+  }
+  .content {
+    font-size: 0.9rem;
+  }
+  .grid {
+    gap: 20px;
+  }
+  .socialLink{
+    left: 12.2rem;
+  }
+  .img{
+    height: 15vh;
+  }
+}
+
+@media (max-width: 425px) {
+
+    .socialLink{
+    left: 19.2rem;
+  }
+    .imageWrapper img {
+    height: 413px;
+  }
+}
+
+@media (max-width: 375px) {
+
+    .socialLink{
+    left: 13.2rem;
+  }
+    .imageWrapper img {
+    height: 362px;
+  }
+}
+
+@media (max-width: 320px) {
+
+    .socialLink{
+    left: 13.2rem;
+  }
+}
