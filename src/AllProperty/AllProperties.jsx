@@ -2,9 +2,13 @@ import { useState } from "react";
 import { IoBedSharp } from "react-icons/io5";
 import { LuBath } from "react-icons/lu";
 import styled from "./AllProperties.module.css";
-
+import { useLocation } from "react-router-dom";
+import { useMemo } from "react";
 export default function AllProperties() {
-  const [filter, setFilter] = useState("All");
+
+  const location = useLocation(); // ✅ make sure you call useLocation
+  const params = new URLSearchParams(location.search);
+  const filterFromURL = params.get("filter") || "All";
 
   const properties = [
     {
@@ -82,14 +86,16 @@ export default function AllProperties() {
   ];
 
   // Filtered properties based on user selection
-  const filteredProperties =
-    filter === "All"
-      ? properties
-      : properties.filter((property) => property.tag === filter);
+  const filteredProperties = useMemo(()=>{
+    // debugger
+    if (filterFromURL === "Buy") return properties.filter(p => p.tag === "Buy")
+
+    if (filterFromURL === "Rent") return properties.filter(p => p.tag === "Rent")
+      return properties;
+  }, [filterFromURL])
 
   return (
     <div>
-      {/* Hero Section */}
       <div className={styled.container}>
         <img
           className={styled.img}
@@ -100,28 +106,6 @@ export default function AllProperties() {
           <p className={styled.content}>OUR EXCLUSIVE PROPERTIES</p>
           <p className={styled.properties}>All Properties</p>
         </div>
-      </div>
-
-      {/* Filter Buttons */}
-      <div className={styled.filterButtons}>
-        <button
-          className={filter === "All" ? styled.active : ""}
-          onClick={() => setFilter("All")}
-        >
-          All
-        </button>
-        <button
-          className={filter === "Buy" ? styled.active : ""}
-          onClick={() => setFilter("Buy")}
-        >
-          Buy
-        </button>
-        <button
-          className={filter === "Rent" ? styled.active : ""}
-          onClick={() => setFilter("Rent")}
-        >
-          Rent
-        </button>
       </div>
 
       {/* Properties Grid */}

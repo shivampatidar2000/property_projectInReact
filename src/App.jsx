@@ -16,8 +16,8 @@ function App() {
   return (
     <>
     
-    <AppNavbar />
     <BrowserRouter>
+      <AppNavbar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path='/properties' element={<AllProperties/>}></Route>

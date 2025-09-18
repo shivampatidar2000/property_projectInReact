@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import styled from "./Navbar.module.css";
-
+import { useNavigate } from "react-router-dom";
 export default function AppNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
   const handlePropertyFilter = (filter) => {
-    // navigate(`/properties?filter=${filter}`);
+    navigate(`/properties?filter=${filter}`);
     setMenuOpen(false);
   };
   return (

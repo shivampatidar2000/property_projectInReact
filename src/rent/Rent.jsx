@@ -1,8 +1,14 @@
 import { IoBedSharp } from "react-icons/io5";
 import { LuBath } from "react-icons/lu";
 import styled from "./Rent.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Rent() {
+  const navigate = useNavigate()
+
+  const handlePropertyForRent = (filter) =>{
+    navigate("/properties?filter=Rent")
+  }
   const properties = [
     {
       id: "1",
@@ -73,7 +79,7 @@ export default function Rent() {
         ))}
       </div>
         <div className={styled.buttonWrapper}>
-        <button className={styled.viewMoreBtn}>View More</button>
+        <button onClick={() => handlePropertyForRent("Rent")} className={styled.viewMoreBtn}>View More</button>
       </div>
     </div>
   );

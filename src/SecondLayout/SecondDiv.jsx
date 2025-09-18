@@ -1,6 +1,14 @@
 import styled from "./Second.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function SecondDiv() {
+  const navigate = useNavigate();
+  const handlePropertyForBuy = (filter) => {
+    navigate(`/properties?filter=${filter}`);
+  };
+  const handlePropertyForRent = (filter) => {
+    navigate(`/properties?filter=${filter}`);
+  };
   return (
     <div className={styled.mainDiv}>
       <p className={styled.lookingFor}>WHAT ARE YOU LOOKING FOR?</p>
@@ -12,7 +20,7 @@ export default function SecondDiv() {
             alt="buy"
           />
           <div className={`${styled.overlay} ${styled.overlayBlue}`}></div>
-          <span className={styled.text}>Buy</span>
+          <span onClick={() => handlePropertyForBuy("Buy")} className={styled.text}>Buy</span>
         </div>
 
         <div className={styled.card}>
@@ -21,7 +29,7 @@ export default function SecondDiv() {
             alt="rent"
           />
           <div className={`${styled.overlay} ${styled.overlayRed}`}></div>
-          <span className={styled.text}>Rent</span>
+          <span onClick={() => handlePropertyForBuy("Rent")} className={styled.text}>Rent</span>
         </div>
       </div>
     </div>

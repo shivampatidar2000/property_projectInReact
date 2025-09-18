@@ -1,8 +1,13 @@
 import { IoBedSharp } from "react-icons/io5";
 import { LuBath } from "react-icons/lu";
 import styled from "./Sale.module.css";
-
+import { useNavigate } from "react-router-dom";
 export default function Sale() {
+  const navigate = useNavigate();
+  const handlePropertyForBuy = (filter) =>{
+    navigate(`/properties?filter=${filter}`);
+
+  }
   const properties = [
     {
       id: "1",
@@ -73,7 +78,7 @@ export default function Sale() {
         ))}
       </div>
         <div className={styled.buttonWrapper}>
-        <button className={styled.viewMoreBtn}>View More</button>
+        <button onClick={()=>handlePropertyForBuy("Buy")} className={styled.viewMoreBtn}>View More</button>
       </div>
     </div>
   );

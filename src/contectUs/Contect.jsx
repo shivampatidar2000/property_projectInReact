@@ -1,6 +1,28 @@
+import { useState } from "react";
 import styles from "./Contect.module.css";
 
 export default function Contect() {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    interest: "",
+    message: "",
+  });
+
+  const handleChange = (e) =>{
+    const {name, value} = e.target;
+    setFormData((prev)=>({...prev, [name]: value}))
+  }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+      localStorage.setItem("contactForm", JSON.stringify(formData));
+      alert("Form data saved to localStorage ✅");
+      console.log("Saved data:", formData);
+      setFormData("")
+
+  }
   return (
     <div className={styles.mainCont}>
       {/* Left Section */}
@@ -19,36 +41,71 @@ export default function Contect() {
       <div className={styles.rightSection}>
         <p className={styles.home}>CONTACT US</p>
 
-        <form className={styles.form}>
+        <form onSubmit = {handleSubmit} className={styles.form}>
           {/* First & Last Name */}
           <div className={styles.inputGroup}>
             <div>
               <label className={styles.field}>First Name*</label>
-              <input type="text" className={styles.inputField} />
+              <input name="firstname" 
+                type="text" 
+                className={styles.inputField} 
+                value={formData.firstname} 
+                onChange={handleChange} 
+              />
             </div>
             <div>
               <label className={styles.field}>Last Name*</label>
-              <input type="text" className={styles.inputField} />
+              <input name="lastname" 
+                type="text" className={styles.inputField} 
+                value={formData.lastname}
+                onChange={handleChange}
+              />
             </div>
           </div>
 
           {/* Email */}
           <div>
             <label className={styles.field}>Email*</label>
-            <input type="email" className={styles.inputField} />
+            <input name="email" 
+              type="email" 
+              className={styles.inputField} 
+              value={formData.email}
+              onChange={handleChange}
+            />
           </div>
 
           {/* Radio buttons */}
           <div className={styles.radioGroup}>
             <p className={styles.field}>Interested in:</p>
             <div>
-              <input type="radio" id="buy" name="interest" value="buy" />
+              <input 
+                type="radio" 
+                id="buy" 
+                name="interest" 
+                value="buy" 
+                checked={formData.interest === "buy"}
+                onChange={handleChange} 
+                />
               <label htmlFor="buy">Buy</label>
 
-              <input type="radio" id="rent" name="interest" value="rent" />
+              <input 
+                type="radio" 
+                id="rent" 
+                name="interest" 
+                value="rent" 
+                checked={formData.interest === "rent"}
+                onChange={handleChange}
+              />
               <label htmlFor="rent">Rent</label>
 
-              <input type="radio" id="other" name="interest" value="other" />
+              <input 
+                type="radio" 
+                id="other" 
+                name="interest" 
+                value="other" 
+                checked = {formData.interest === "other"}
+                onChange={handleChange}
+              />
               <label htmlFor="other">Other</label>
             </div>
           </div>
@@ -56,7 +113,11 @@ export default function Contect() {
           {/* Message */}
           <div>
             <label className={styles.field}>Message</label>
-            <textarea className={styles.textArea}></textarea>
+            <textarea 
+              name="message" 
+              value={formData.message}
+              onChange={handleChange}
+              className={styles.textArea}></textarea>
           </div>
           <button type="submit" className={styles.submitBtn}>Submit</button>
 
