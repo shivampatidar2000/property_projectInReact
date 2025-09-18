@@ -63,6 +63,8 @@
   .dream {
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
+    width: 74%;
+    margin-left: 36px;
   }
 
   .threeDiv p:first-child {
