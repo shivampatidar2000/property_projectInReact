@@ -82,6 +82,13 @@
     color: red;
 }
 
+
+@media (max-width:1024) {
+  .section{
+    width: 95%;
+  }
+  
+}
 /* ✅ Responsive adjustments */
 @media (max-width: 768px) {
   .text {
